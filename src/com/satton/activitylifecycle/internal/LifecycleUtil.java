@@ -3,6 +3,7 @@ package com.satton.activitylifecycle.internal;
 
 import java.lang.reflect.Method;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Intent;
@@ -11,12 +12,11 @@ import android.os.Build;
 
 public class LifecycleUtil {
 
+    @SuppressLint("NewApi")
     public static void registerActivityLifecycle(Application app) {
         try {
             if (Build.VERSION.SDK_INT >= 14) {
-                Object obj = Class.forName("com.mobage.android.application.ActivityLifecycle").newInstance();
-                Method m = app.getClass().getMethod("registerActivityLifecycleCallbacks", null);
-                m.invoke(obj, null);
+                app.registerActivityLifecycleCallbacks(new ActivityLifecycle());
                 return;
             } else {
                 Class<?> atClass = Class.forName("android.app.ActivityThread");
