@@ -18,19 +18,20 @@ public class LifecycleUtil {
                 Method m = app.getClass().getMethod("registerActivityLifecycleCallbacks", null);
                 m.invoke(obj, null);
                 return;
+            } else {
+                Class<?> atClass = Class.forName("android.app.ActivityThread");
+                Method m = atClass.getMethod("currentActivityThread", null);
+                Object obj = m.invoke(m, null);
+
+                Method m2 = atClass.getMethod("getInstrumentation", null);
+
+                Instrumentation instrumentation = (Instrumentation) m2.invoke(obj, null);
+                IntentFilter filter = new IntentFilter(Intent.ACTION_MAIN);
+                filter.addCategory("android.intent.category.LAUNCHER");
+
+                ActivityLifecycleFor2 monitor = new ActivityLifecycleFor2(filter, null, false);
+                instrumentation.addMonitor(monitor);
             }
-            Class<?> atClass = Class.forName("android.app.ActivityThread");
-            Method m = atClass.getMethod("currentActivityThread", null);
-            Object obj = m.invoke(m, null);
-
-            Method m2 = atClass.getMethod("getInstrumentation", null);
-
-            Instrumentation instrumentation = (Instrumentation) m2.invoke(obj, null);
-            IntentFilter filter = new IntentFilter(Intent.ACTION_MAIN);
-            filter.addCategory("android.intent.category.LAUNCHER");
-
-            ActivityLifecycleFor2 monitor = new ActivityLifecycleFor2(filter, null, false);
-            instrumentation.addMonitor(monitor);
         } catch (Exception e) {
             e.printStackTrace();
         }
