@@ -18,9 +18,4 @@ public class Activity_3 extends Activity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
 }

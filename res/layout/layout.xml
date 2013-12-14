@@ -13,10 +13,4 @@
         tools:context=".Activity_1" />
     
 
-    <Button
-        android:id="@+id/finish"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:text="finish"/>
-
 </RelativeLayout>
