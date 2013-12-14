@@ -7,7 +7,7 @@
 
 ## Note
 * Android 4.0 以上の場合は、公式に追加された Application.ActivityLifecycleCallbacks を利用し Activity の Lifecycle 通知を受ける
-* 4.0 未満の場合は、onActivityCreated、 onActivityResumed だけ通知可能が可能
+* 4.0 未満の場合は、onActivityCreated、 onActivityResumed だけだが、確実に通知を受ける事が出来る
 
 
 ## Example
