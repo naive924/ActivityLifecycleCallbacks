@@ -34,6 +34,12 @@ public class MyApp extends Application {
 				String str = String.format("onActivityResumed:%s", activity.getClass().getSimpleName());
 				Log.i("MyApp", str);
 			}
+			@Override
+			public void onActivityDestroyed(Activity activity) {
+				String str = String.format("onDestroyed:%s", activity.getClass().getSimpleName());
+				Log.i("MyApp", str);
+			}
+			
 
 		});
 	}
