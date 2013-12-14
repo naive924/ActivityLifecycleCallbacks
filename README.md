@@ -2,7 +2,7 @@
 
 ## Overview
 * Application 内の全ての Activity の Lifecycle 通知を、裏側でフックする
-* 各 Activity 自体へは、指定のクラスを継承する事を要求しない
+* 各 Activity に、特定のクラスを継承する事を要求しない
 
 
 ## Note
