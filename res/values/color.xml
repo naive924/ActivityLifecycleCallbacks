@@ -1,0 +1,22 @@
+<resources>
+
+    <color name="basic_text_black1">#000000</color>
+    <color name="basic_text_blue1">#43b0c4</color>
+    <color name="basic_btn_blue1">#4dbccb</color>
+    <color name="basic_btn_blue1_select">#78eaf1</color>
+    <color name="basic_text_white">#ffffff</color>
+
+    <color name="pushwidget_text">#5E5E5E</color>
+    <color name="pushwidget_content_background">#f1f1f1</color>
+    <color name="pushwidget_background_start">#000000</color>
+    <color name="pushwidget_background_end">#f1f1f1</color>
+    <color name="pushwidget_text_foreground">#565656</color>
+    <color name="pushwidget_border">#cccccc</color>
+
+    <!-- Slide tab  -->
+    <color name="pager_tab_indicator">#fbde67</color>
+    <color name="pager_background_window">#80000000</color>
+    <color name="pager_background_tab_state_nomal">#40000000</color>
+    <color name="pager_background_tab_state_focuse">#80000000</color>
+    
+</resources>

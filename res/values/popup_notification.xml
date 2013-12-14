@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+  <color name="popup_notification_background">#e4dccc</color>  
+  <color name="popup_notification_title_background">#A9A9A9</color>  
+  <color name="popup_notification_title_foreground">#ffffff</color>  
+  <color name="popup_notification_button_foreground">#ffffff</color>  
+  <color name="popup_notification_text_background">#ffffff</color>  
+  <color name="popup_notification_text_foreground">#000000</color>  
+  
+  <drawable name="background">#99000000</drawable>
+  
+  <style name="Theme.PopupTranslucent" parent="android:style/Theme.Translucent">
+      <item name="android:windowBackground">@drawable/background</item>
+      <item name="android:windowNoTitle">true</item>
+  </style>
+  
+</resources>  
