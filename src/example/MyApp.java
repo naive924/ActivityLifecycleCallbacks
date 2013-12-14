@@ -20,7 +20,13 @@ public class MyApp extends Application {
         ActivityLifecycleManager.addCallback(new ActivityLifecycleManager.Callbacks() {
             @Override
             public void onActivityResumed(Activity activity) {
-                String str = String.format("onActivityResumed:%s", activity.getClass().getSimpleName());
+                String str = String.format("onResumed:%s", activity.getClass().getSimpleName());
+                showToast(str);
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+                String str = String.format("onDestroyed:%s", activity.getClass().getSimpleName());
                 showToast(str);
             }
 
