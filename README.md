@@ -2,29 +2,23 @@
 
 ## Overview
 * Application 内の全ての Activity の Lifecycle 通知を、裏側でフックする
-* 各 Activity に、特定のクラスを継承する事を要求しない
+** 各 Activity に、特定のクラスを継承する事を要求しない
+* Android 4.0 で公式に追加された Application.ActivityLifecycleCallbacks を下位バージョンでも透過的に利用出来るようにする
+** 4.0 未満の場合は、onActivityCreated、 onActivityResumed だけだが、確実に通知を受ける事が出来る
 
-
-## Note
-* Android 4.0 以上の場合は、公式に追加された Application.ActivityLifecycleCallbacks を利用し Activity の 全ての Lifecycle 通知を受ける事が出来る
-* 4.0 未満の場合は、onActivityCreated、 onActivityResumed だけだが、確実に通知を受ける事が出来る
 
 
 ## Example
-* AndroidManifest.xml
-```xml
-    <application
-        android:name="example.MyApp"
-        android:icon="@drawable/icon"
-        android:label="@string/app_name" >
-```
 
-* example.MyApp.java
+* example.MainActivity.java
 ```java
-public class MyApp extends Application {
-	@Override
-	public void onCreate() {
+public class MainActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
 		super.onCreate();
+			:
+			:
 
 		ActivityLifecycleManager.registerLifecycle(this);
 
@@ -43,3 +37,5 @@ public class MyApp extends Application {
 	}
 }
 ```
+
+
