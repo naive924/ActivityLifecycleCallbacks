@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 			:
 			:
 
-		ActivityLifecycleManager.registerLifecycle(this);
+		ActivityLifecycleManager.registerLifecycle(getApplication());
 
 		ActivityLifecycleManager.addCallback(new ActivityLifecycleManager.Callbacks() {
 			@Override
